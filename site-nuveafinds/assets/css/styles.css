@@ -1,0 +1,55 @@
+:root {
+    --nuvea-bg: #faf7eb;
+    --nuvea-green: #8ba88e;
+    --nuvea-green-dark: #7a967d;
+    --nuvea-dark: #4a5550;
+    --nuvea-white: rgba(255, 255, 255, 0.7);
+    --nuvea-white-solid: #ffffff;
+}
+
+body {
+    background-color: var(--nuvea-bg);
+    color: var(--nuvea-dark);
+}
+
+.brand-logo {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.link-card {
+    display: block;
+    transition: all 0.3s ease;
+    background-color: var(--nuvea-white);
+    border: 1px solid rgba(139, 168, 142, 0.15);
+    box-shadow: 0 4px 15px rgba(139, 168, 142, 0.05);
+}
+
+.link-card:hover {
+    transform: translateY(-3px);
+    background-color: var(--nuvea-white-solid);
+    box-shadow: 0 8px 25px rgba(139, 168, 142, 0.15);
+    border-color: rgba(139, 168, 142, 0.4);
+}
+
+.main-link {
+    background-color: var(--nuvea-green);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 6px 20px rgba(139, 168, 142, 0.3);
+}
+
+.main-link:hover {
+    background-color: var(--nuvea-green-dark);
+    box-shadow: 0 8px 25px rgba(139, 168, 142, 0.45);
+    border-color: transparent;
+    color: #ffffff;
+}
+
+@media (max-width: 640px) {
+    .link-card {
+        font-size: 0.98rem;
+        line-height: 1.35;
+    }
+}

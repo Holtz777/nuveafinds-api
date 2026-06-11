@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuvea Finds</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Curating the best in Beauty, Wellness & Daily Gadgets. Discover your next favorite thing on Amazon.">
+    <link rel="icon" type="image/png" href="assets/images/site-icon.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- Configuração de Cores da Marca -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'nuvea-bg': '#FDFCF8',
+                        'nuvea-green': '#8BA88E',
+                        'nuvea-dark': '#4A5550',
+                        'nuvea-cream': '#faf7eb', /* Cor exata do fundo da logo */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col items-center px-4 py-6 md:px-5 md:py-12">
+    
+    <main class="w-full max-w-md flex flex-col items-center z-10">
+        
+        <!-- Profile Image (MUITO MAIOR, Sem círculo cortando) -->
+        <div class="w-full max-w-[220px] sm:max-w-[250px] md:max-w-[320px] flex items-center justify-center mb-2 md:mb-1">
+            <img src="assets/images/brand-logo.png" alt="Nuvea Finds Logo" class="brand-logo w-full h-full object-contain drop-shadow-sm" onerror="this.src='https://ui-avatars.com/api/?name=Nuvea+Finds&background=8BA88E&color=fff&size=256'">
+        </div>
+
+        <!-- H1 escondido (Apenas para SEO, já que a logo tem o nome) -->
+        <h1 class="sr-only">Nuvea Finds</h1>
+
+        <!-- Bio -->
+        <p class="text-center text-sm md:text-[15px] font-medium text-nuvea-dark/80 mb-8 md:mb-10 px-3 leading-relaxed">
+            ✨ Curating the best in Beauty, Wellness & Daily Gadgets.<br>
+            Discover your next favorite thing. 👇
+        </p>
+
+        <!-- Links Container -->
+        <div class="w-full space-y-4">
+            
+            <!-- Link 1: O Principal -->
+            <a href="#" class="link-card main-link block w-full text-center px-5 py-4 rounded-[20px] font-semibold transition-all">
+                🛍️ Shop My Amazon Storefront
+            </a>
+
+            <!-- Link 2 -->
+            <a href="#" class="link-card main-link block w-full text-center px-5 py-4 rounded-[20px] font-semibold transition-all">
+                💄 Viral Makeup & Skincare Finds
+            </a>
+
+            <!-- Link 3 -->
+            <a href="#" class="link-card main-link block w-full text-center px-5 py-4 rounded-[20px] font-semibold transition-all">
+                🌱 Wellness & Health Must-Haves
+            </a>
+
+            <!-- Link 4 -->
+            <a href="#" class="link-card main-link block w-full text-center px-5 py-4 rounded-[20px] font-semibold transition-all">
+                🏡 Aesthetic Home Gadgets
+            </a>
+
+        </div>
+
+        <!-- Social Icons (Footer) -->
+        <div class="flex gap-6 mt-14 md:mt-16 opacity-80">
+            <!-- Pinterest -->
+            <a href="https://pinterest.com/NuveaFinds" target="_blank" class="text-nuvea-green hover:text-nuvea-dark transition-colors duration-300">
+                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.168 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.366 18.619 0 12.016 0z"/></svg>
+            </a>
+            <!-- Email -->
+            <a href="mailto:contact@nueveafinds.com" class="text-nuvea-green hover:text-nuvea-dark transition-colors duration-300" aria-label="Email Nuvea Finds at contact@nueveafinds.com">
+                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </a>
+        </div>
+
+        <!-- Copyright -->
+        <p class="mt-8 px-2 text-center text-xs text-nuvea-dark/40">© 2026 Nuvea Finds. All rights reserved.</p>
+        <p class="mt-2 px-2 text-center text-xs text-nuvea-dark/50">
+            <a href="mailto:contact@nuveafinds.com" class="hover:text-nuvea-dark transition-colors duration-300">contact@nuveafinds.com</a>
+            <span class="mx-1 text-nuvea-dark/20">·</span>
+            <a href="privacy-policy.html" class="hover:text-nuvea-dark transition-colors duration-300">Privacy</a>
+        </p>
+
+    </main>
+
+</body>
+</html>
