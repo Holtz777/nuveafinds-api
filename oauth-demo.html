@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>OAuth Demo</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;background:#FAF7EB;padding:50px 30px;color:#4A5550}
+.box{background:#fff;border-radius:16px;padding:28px;margin:0 auto 20px;max-width:720px;border:1px solid rgba(139,168,142,0.2)}
+h2{color:#8BA88E;font-size:18px;margin-bottom:12px}
+pre{background:#1e1e1e;color:#4ec9b0;padding:14px 18px;border-radius:10px;font:13px "Courier New",monospace;overflow-x:auto;white-space:pre-wrap;word-break:break-all}
+.ok{color:#8BA88E;font-weight:600;margin-top:10px}
+</style></head>
+<body>
+<div class="box">
+<h2>✅ Step 1 — OAuth Authorization</h2>
+<p style="margin-bottom:10px">User authorizes the Nuvea Finds app via Pinterest OAuth:</p>
+<pre>GET https://www.pinterest.com/oauth/
+  ?client_id=1560888
+  &redirect_uri=https://developers.pinterest.com/oauth/callback
+  &response_type=code
+  &scope=pins:read pins:write boards:read boards:write</pre>
+<p class="ok">✅ Authorization granted → code received in redirect URL</p>
+</div>
+<div class="box">
+<h2>✅ Step 2 — Token Exchange (Server-Side)</h2>
+<p style="margin-bottom:10px">Backend exchanges the authorization code for an access token:</p>
+<pre>POST https://api.pinterest.com/v5/oauth/token
+Authorization: Basic {base64(client_id:client_secret)}
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=authorization_code&code=f5ece420...&redirect_uri=...</pre>
+<p style="margin-top:10px">Response:</p>
+<pre style="color:#6A9955">{
+  "access_token": "pina_AEATRUIXABHSGAA...",
+  "refresh_token": "pinr.eyJhbGciOiJSUzI1NiI...",
+  "expires_in": 2592000,
+  "refresh_token_expires_in": 5184000,
+  "scope": "boards:read boards:write pins:read pins:write"
+}</pre>
+<p class="ok">✅ Tokens stored — auto-refresh every 25 days</p>
+</div>
+<div class="box">
+<h2>▶️ Step 3 — API Integration</h2>
+<p>The access token powers all Pinterest API calls. The following demo shows the complete Pin creation pipeline.</p>
+</div>
+</body></html>

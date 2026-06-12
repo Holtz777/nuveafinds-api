@@ -4,3 +4,7 @@
 /tmp/
 .DS_Store
 Thumbs.db
+node_modules/
+*.webm
+test-video.mp4
+package-lock.json

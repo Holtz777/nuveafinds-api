@@ -46,12 +46,9 @@
 
     <div class="max-w-3xl mx-auto px-4 py-8">
 
-        <header class="text-center mb-6">
-            <div class="flex items-center justify-center gap-3 mb-1">
-                <h1 class="text-2xl font-bold text-nuvea-dark">Nuvea Finds — Pin Upload</h1>
-                <button id="langToggle" onclick="toggleLang()" class="text-xs px-3 py-1 rounded-full border border-nuvea-green/30 text-nuvea-green hover:bg-nuvea-green/10 transition-colors font-medium" title="Switch language">EN</button>
-            </div>
-            <p class="text-sm text-nuvea-dark/60 mt-1">Pinterest Video Pin pipeline</p>
+        <header class="text-center mb-8">
+            <h1 class="text-2xl font-bold text-nuvea-dark">Nuvea Finds — Pin Upload</h1>
+            <p class="text-sm text-nuvea-dark/60 mt-1">Pinterest Video Pin Pipeline</p>
         </header>
 
         <div class="bg-white rounded-2xl shadow-sm border border-nuvea-green/10 p-6 mb-6 space-y-3">
@@ -63,7 +60,7 @@
             <div class="flex items-center justify-between">
                 <div>
                     <label class="text-xs font-medium text-nuvea-dark/60">Pinterest Sandbox</label>
-                    <p class="text-[10px] text-nuvea-dark/40">Usar API sandbox (funciona em Trial mode)</p>
+                    <p class="text-[10px] text-nuvea-dark/40">Use sandbox API (works in Trial mode)</p>
                 </div>
                 <button id="sandboxToggle" onclick="toggleSandbox()" class="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-300 transition-colors cursor-pointer">
                     <span id="sandboxDot" class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform ml-1"></span>
@@ -93,38 +90,36 @@
             </div>
         </div>
 
-        <!-- Step description — serves as video caption -->
-        <div id="stepDescBanner" class="text-center mb-6 py-2 px-4 bg-nuvea-green/5 rounded-xl border border-nuvea-green/10">
-            <p id="stepDescText" class="text-sm text-nuvea-dark/70 font-medium">Preencha os dados do produto Amazon</p>
-        </div>
+        <div id="stepDescBanner" class="text-center mb-6 py-2 px-4 bg-nuvea-green/5 rounded-xl border border-nuvea-green/10"><p id="stepDescText" class="text-sm text-nuvea-dark/70 font-medium">Step 1 — Enter your Amazon product details</p></div>
 
         <div id="errorBox" class="hidden bg-red-50 border border-red-200 text-red-700 rounded-xl p-4 mb-6 text-sm"></div>
         <div id="successBox" class="hidden bg-green-50 border border-green-200 text-green-700 rounded-xl p-4 mb-6 text-sm"></div>
+
         <!-- STEP 1: Product Info -->
         <section id="step1" class="space-y-5">
             <div class="bg-white rounded-2xl shadow-sm border border-nuvea-green/10 p-6 space-y-5">
                 <div class="flex items-center justify-between">
-                    <h2 class="text-lg font-semibold text-nuvea-dark">Dados do Produto</h2>
+                    <h2 class="text-lg font-semibold text-nuvea-dark">Product Details</h2>
                     <div class="flex items-center gap-2">
-                        <span id="draftBadge" class="hidden text-[10px] font-medium text-nuvea-green bg-nuvea-green/10 px-2 py-0.5 rounded-full">Draft salvo</span>
-                        <button onclick="clearDraft()" class="text-[10px] text-nuvea-dark/40 hover:text-red-500 transition-colors">Limpar draft</button>
+                        <span id="draftBadge" class="hidden text-[10px] font-medium text-nuvea-green bg-nuvea-green/10 px-2 py-0.5 rounded-full">Draft saved</span>
+                        <button onclick="clearDraft()" class="text-[10px] text-nuvea-dark/40 hover:text-red-500 transition-colors">Clear draft</button>
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium text-nuvea-dark/80 mb-1">Titulo do Produto (Amazon) <span class="text-red-400">*</span></label>
-                    <input id="productName" type="text" placeholder='Ex: viral hair growth serum with rosemary oil'
+                    <label class="block text-sm font-medium text-nuvea-dark/80 mb-1">Product Title (Amazon) <span class="text-red-400">*</span></label>
+                    <input id="productName" type="text" placeholder='e.g. viral hair growth serum with rosemary oil'
                         class="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium text-nuvea-dark/80 mb-1">Link de Afiliado Amazon <span class="text-red-400">*</span></label>
+                    <label class="block text-sm font-medium text-nuvea-dark/80 mb-1">Amazon Affiliate Link <span class="text-red-400">*</span></label>
                     <input id="affiliateLink" type="url" placeholder='https://amzn.to/...'
                         class="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium text-nuvea-dark/80 mb-1">URL da Imagem do Produto (capa do pin) <span class="text-red-400">*</span></label>
+                    <label class="block text-sm font-medium text-nuvea-dark/80 mb-1">Product Image URL (pin cover) <span class="text-red-400">*</span></label>
                     <input id="productImageUrl" type="url" placeholder='https://m.media-amazon.com/images/...'
                         class="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm">
                     <div id="imagePreviewWrap" class="hidden mt-3 bg-nuvea-cream/50 rounded-xl p-3 flex items-center gap-3">
@@ -137,12 +132,12 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                        <label class="block text-sm font-medium text-nuvea-dark/80 mb-1">@ do Influencer (TikTok)</label>
+                        <label class="block text-sm font-medium text-nuvea-dark/80 mb-1">@ Influencer Handle (TikTok)</label>
                         <input id="influencerHandle" type="text" placeholder='@skincarebyhyram'
                             class="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-nuvea-dark/80 mb-1">Tags / Keywords (opcional)</label>
+                        <label class="block text-sm font-medium text-nuvea-dark/80 mb-1">Tags / Keywords (optional)</label>
                         <input id="productTags" type="text" placeholder='rosemary oil, hair growth, serum'
                             class="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm">
                     </div>
@@ -156,7 +151,7 @@
             </div>
 
             <button onclick="goToStep2()" class="w-full py-3 bg-nuvea-green hover:bg-nuvea-green-dark text-white font-semibold rounded-xl transition-colors">
-                Gerar Titulos com IA
+                Generate Titles with AI
             </button>
         </section>
 
@@ -164,8 +159,8 @@
         <section id="step2" class="hidden space-y-5">
             <div class="bg-white rounded-2xl shadow-sm border border-nuvea-green/10 p-6 space-y-4">
                 <div class="flex items-center justify-between">
-                    <h2 class="text-lg font-semibold text-nuvea-dark">Escolha uma Versao</h2>
-                    <button onclick="goToStep1()" class="text-xs text-nuvea-dark/50 hover:text-nuvea-dark transition-colors">Voltar</button>
+                    <h2 class="text-lg font-semibold text-nuvea-dark">Escolha uma Version</h2>
+                    <button onclick="goToStep1()" class="text-xs text-nuvea-dark/50 hover:text-nuvea-dark transition-colors">Back</button>
                 </div>
 
                 <div class="flex items-center gap-2 bg-nuvea-cream/80 rounded-lg px-3 py-2 text-xs text-nuvea-dark/70">
@@ -175,7 +170,7 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div id="cardA" onclick="selectVersion('A')" class="cursor-pointer border-2 border-gray-200 rounded-xl p-4 hover:border-nuvea-green/40 transition-all">
-                        <div class="text-xs font-semibold text-nuvea-green mb-2">Versao A — Tom suave / beauty</div>
+                        <div class="text-xs font-semibold text-nuvea-green mb-2">Version A — Tom suave / beauty</div>
                         <div class="mb-3">
                             <label class="block text-[10px] uppercase tracking-wide text-nuvea-dark/40 mb-1">Titulo</label>
                             <p id="titleA" class="text-sm font-medium text-nuvea-dark"></p>
@@ -187,7 +182,7 @@
                     </div>
 
                     <div id="cardB" onclick="selectVersion('B')" class="cursor-pointer border-2 border-gray-200 rounded-xl p-4 hover:border-nuvea-green/40 transition-all">
-                        <div class="text-xs font-semibold text-nuvea-green mb-2">Versao B — Tom forte / scroll-stopper</div>
+                        <div class="text-xs font-semibold text-nuvea-green mb-2">Version B — Tom forte / scroll-stopper</div>
                         <div class="mb-3">
                             <label class="block text-[10px] uppercase tracking-wide text-nuvea-dark/40 mb-1">Titulo</label>
                             <p id="titleB" class="text-sm font-medium text-nuvea-dark"></p>
@@ -211,7 +206,7 @@
             <div class="bg-white rounded-2xl shadow-sm border border-nuvea-green/10 p-6 space-y-4">
                 <div class="flex items-center justify-between">
                     <h2 class="text-lg font-semibold text-nuvea-dark">Upload do Video</h2>
-                    <button onclick="goToStep2()" class="text-xs text-nuvea-dark/50 hover:text-nuvea-dark transition-colors">Voltar</button>
+                    <button onclick="goToStep2()" class="text-xs text-nuvea-dark/50 hover:text-nuvea-dark transition-colors">Back</button>
                 </div>
 
                 <div id="dropZone" onclick="document.getElementById('videoFile').click()"
@@ -221,7 +216,7 @@
                         <svg class="w-10 h-10 mx-auto text-gray-400 mb-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/>
                         </svg>
-                        <p class="text-sm text-nuvea-dark/60">Arraste o video .mp4 aqui ou clique para selecionar</p>
+                        <p class="text-sm text-nuvea-dark/60">Drag your .mp4 video here or click to select</p>
                         <p class="text-xs text-nuvea-dark/40 mt-1">Max 2 GB — Video vertical do TikTok</p>
                     </div>
                     <div id="fileInfo" class="hidden">
@@ -236,7 +231,7 @@
 
             <button id="btnUploadVideo" onclick="uploadVideo()" disabled
                 class="w-full py-3 bg-nuvea-green hover:bg-nuvea-green-dark disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold rounded-xl transition-colors">
-                Registrar e Upload para Pinterest
+                Register & Upload to Pinterest
             </button>
         </section>
 
@@ -244,8 +239,8 @@
         <section id="step4" class="hidden space-y-5">
             <div class="bg-white rounded-2xl shadow-sm border border-nuvea-green/10 p-6 space-y-4">
                 <div class="flex items-center justify-between">
-                    <h2 class="text-lg font-semibold text-nuvea-dark">Publicar Pin</h2>
-                    <button onclick="goToStep3()" class="text-xs text-nuvea-dark/50 hover:text-nuvea-dark transition-colors">Voltar</button>
+                    <h2 class="text-lg font-semibold text-nuvea-dark">Publish Pin</h2>
+                    <button onclick="goToStep3()" class="text-xs text-nuvea-dark/50 hover:text-nuvea-dark transition-colors">Back</button>
                 </div>
 
                 <div class="space-y-3 text-sm">
@@ -270,7 +265,7 @@
 
             <button id="btnPublish" onclick="publishPin()"
                 class="w-full py-3 bg-nuvea-green hover:bg-nuvea-green-dark text-white font-semibold rounded-xl transition-colors">
-                Publicar no Pinterest
+                Publish to Pinterest
             </button>
         </section>
 
@@ -314,7 +309,6 @@
         <footer class="mt-10 text-center text-xs text-nuvea-dark/30">
             Nuvea Finds &copy; 2026
         </footer>
-
     </div>
 
     <script>
@@ -370,24 +364,13 @@
             for (let i = 1; i <= 4; i++) {
                 document.getElementById('step' + i).classList.toggle('hidden', i !== n);
             }
-            refreshI18n();
+            // Update step description
+            const descs = ['Step 1 — Enter your Amazon product details','Step 2 — AI generates SEO-optimized titles & descriptions','Step 3 — Upload your video to Pinterest','Step 4 — Review and publish your Pin'];
+            const descEl = document.getElementById('stepDescText');
+            if (descEl) descEl.textContent = descs[n-1] || '';
         }
 
         // ---- Image Preview ----
-
-        // ═══ i18n (language toggle for demo video) ═══
-        let _lang = 'pt';
-        const _i18n = {
-            pt: {
-                step1Desc: 'Preencha os dados do produto Amazon', step2Desc: 'IA gera títulos e descrições otimizadas', step3Desc: 'Upload do vídeo para o Pinterest', step4Desc: 'Revise e publique o Pin',
-            },
-            en: {
-                step1Desc: 'Step 1: Enter your Amazon product details', step2Desc: 'Step 2: AI generates SEO-optimized titles & descriptions', step3Desc: 'Step 3: Upload your video to Pinterest', step4Desc: 'Step 4: Review and publish your Pin',
-            }
-        };
-        function _(key) { return (_i18n[_lang] && _i18n[_lang][key]) || key; }
-        function toggleLang() { _lang = _lang === 'pt' ? 'en' : 'pt'; document.getElementById('langToggle').textContent = _lang === 'pt' ? 'EN' : 'PT-BR'; refreshI18n(); }
-        function refreshI18n() { const n = parseInt(document.querySelector('#steps .step-active')?.dataset?.step || 1); document.getElementById('stepDescText').textContent = _('step' + n + 'Desc'); }
         let previewTimer;
         document.getElementById('productImageUrl').addEventListener('input', function() {
             clearTimeout(previewTimer);
@@ -518,10 +501,10 @@
                 document.getElementById('cardB').classList.remove('card-selected');
                 document.getElementById('btnGoToStep3').disabled = true;
 
-                log('IA gerou 2 versoes + board sugerida: ' + data.board, 'ok');
+                log('AI generated 2 versions + suggested board: ' + data.board, 'ok');
             } catch (err) {
-                log('Erro ao gerar: ' + err.message, 'err');
-                showError('Erro ao gerar pin: ' + err.message);
+                log('Generation error: ' + err.message, 'err');
+                showError('Error generating pin: ' + err.message);
                 setStep(1);
             }
         }
@@ -538,7 +521,7 @@
             state.selectedTitle = v === 'A' ? d.versionA.title : d.versionB.title;
             state.selectedDesc = v === 'A' ? d.versionA.description : d.versionB.description;
 
-            log('Versao ' + v + ' selecionada');
+            log('Version ' + v + ' selected');
         }
 
         function goToStep3() {
@@ -579,10 +562,10 @@
 
             const btn = document.getElementById('btnUploadVideo');
             btn.disabled = true;
-            btn.innerHTML = '<span class="spinner inline-block align-middle mr-2"></span> Registrando no Pinterest...';
+            btn.innerHTML = '<span class="spinner inline-block align-middle mr-2"></span> Registering with Pinterest...';
 
             try {
-                log('Registrando video no Pinterest (/pin-register-video)...');
+                log('Registering video with Pinterest (/pin-register-video)...');
                 const regResp = await fetch(`${getApiBase()}/pin-register-video`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -593,14 +576,14 @@
                     }),
                 });
                 const regJson = await regResp.json();
-                if (regJson.status !== 'success') throw new Error(regJson.message || 'Erro ao registrar');
+                if (regJson.status !== 'success') throw new Error(regJson.message || 'Registration error');
 
                 state.mediaId = regJson.data.mediaId;
-                log('Media registrada: ' + regJson.data.mediaId, 'ok');
+                log('Media registered: ' + regJson.data.mediaId, 'ok');
 
-                btn.innerHTML = '<span class="spinner inline-block align-middle mr-2"></span> Enviando video... (pode demorar)';
+                btn.innerHTML = '<span class="spinner inline-block align-middle mr-2"></span> Uploading video... (may take a while)';
 
-                log('Fazendo upload do video para S3 do Pinterest...');
+                log('Uploading video to Pinterest S3...');
                 const formData = new FormData();
                 formData.append('file', state.videoFile);
                 formData.append('upload_url', regJson.data.uploadUrl);
@@ -613,8 +596,8 @@
                 const upJson = await upResp.json();
                 if (upJson.status !== 'success') throw new Error(upJson.message || 'Erro no upload');
 
-                log('Video enviado com sucesso!', 'ok');
-                showSuccess('Video enviado! O Pinterest esta processando (isso pode levar minutos).');
+                log('Video uploaded successfully!', 'ok');
+                showSuccess('Video uploaded! Pinterest is processing (this may take a few minutes).');
 
                 document.getElementById('pubBoard').textContent = state.board;
                 document.getElementById('pubTitle').textContent = state.selectedTitle;
@@ -622,14 +605,14 @@
                 document.getElementById('pubMedia').textContent = state.mediaId;
 
                 setStep(4);
-                log('Pronto para publicar.');
+                log('Ready to publish.');
             } catch (err) {
-                log('Erro no upload: ' + err.message, 'err');
-                showError('Erro no upload: ' + err.message);
+                log('Upload error: ' + err.message, 'err');
+                showError('Upload error: ' + err.message);
                 setStep(3);
             } finally {
                 btn.disabled = false;
-                btn.textContent = 'Registrar e Upload para Pinterest';
+                btn.textContent = 'Register & Upload to Pinterest';
                 if (state.videoFile) btn.disabled = false;
             }
         }
@@ -638,10 +621,10 @@
             hideError();
             const btn = document.getElementById('btnPublish');
             btn.disabled = true;
-            btn.innerHTML = '<span class="spinner inline-block align-middle mr-2"></span> Publicando... (polling media)';
+            btn.innerHTML = '<span class="spinner inline-block align-middle mr-2"></span> Publishing... (checking media status)';
 
             try {
-                log('Publicando pin... (aguardando media ficar pronta)');
+                log('Publishing pin... (waiting for media to be ready)');
 
                 const resp = await fetch(`${getApiBase()}/pin-publish`, {
                     method: 'POST',
@@ -660,17 +643,17 @@
                 if (json.status !== 'success') throw new Error(json.message || 'Erro ao publicar');
 
                 const pin = json.data;
-                log('Pin publicado! ID: ' + pin.pinId, 'ok');
+                log('Pin published! ID: ' + pin.pinId, 'ok');
                 log('URL: ' + pin.pinUrl, 'ok');
 
-                showSuccess(`Pin publicado com sucesso! Veja em: ${pin.pinUrl}`);
-                btn.textContent = 'Publicado! Abrir Pin...';
+                showSuccess(`Pin published successfully! View at: ${pin.pinUrl}`);
+                btn.textContent = 'Published! Open Pin...';
                 btn.onclick = () => window.open(json.data.pinUrl, '_blank');
             } catch (err) {
-                log('Erro ao publicar: ' + err.message, 'err');
-                showError('Erro ao publicar: ' + err.message);
+                log('Publish error: ' + err.message, 'err');
+                showError('Publish error: ' + err.message);
                 btn.disabled = false;
-                btn.textContent = 'Publicar no Pinterest';
+                btn.textContent = 'Publish to Pinterest';
             }
         }
 

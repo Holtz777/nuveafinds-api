@@ -1,0 +1,23 @@
+{
+  "name": "nuvea",
+  "version": "1.0.0",
+  "description": "",
+  "main": "nuvea-demo-recorder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Holtz777/nuveafinds-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Holtz777/nuveafinds-api/issues"
+  },
+  "homepage": "https://github.com/Holtz777/nuveafinds-api#readme",
+  "dependencies": {
+    "playwright": "^1.60.0"
+  }
+}
